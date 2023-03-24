@@ -1,3 +1,4 @@
+//Arr include possible outputs
 const question = [
     'Are humans more important than animals?',
     'Can you ever honestly know another person?',
@@ -25,15 +26,19 @@ const delivery = [
     'Pictionary (draw.chat)'
 ];
 
+//Function to randomly select from an arr
 const getRandomIndex = arr => {
     return arr[Math.floor(Math.random() * arr.length - 1)];
 };
 
+//Generates output
 const philosophyPrompter = () => {
-    console.log(`~PHILOSOPHY PROMPTER~`);
-    console.log(`QUESTION: ${getRandomIndex(question)}`);
-    console.log(`CONDITION: ${getRandomIndex(condition)}`);
-    console.log(`DELIVERY: ${getRandomIndex(delivery)}`);
+    let message = ['~PHILOSOPHY PROMPTER~'];
+    message.push(`QUESTION: ${getRandomIndex(question)}`);
+    message.push(`CONDITION: ${getRandomIndex(condition)}`);
+    message.push(`DELIVERY: ${getRandomIndex(delivery)}`)
+    return message.join('\n');
 }
 
-philosophyPrompter();
+
+console.log(philosophyPrompter());
